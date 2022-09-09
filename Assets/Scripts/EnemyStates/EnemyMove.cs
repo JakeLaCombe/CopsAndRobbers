@@ -16,7 +16,6 @@ public class EnemyMove : IState
     GameObject level;
     private Vector3 originalPosition;
     private Vector3 patrolDestination;
-    private GameObject decoyTarget;
     private Vector3 startingDirection;
     private float speed = 1.0f;
 
@@ -60,13 +59,10 @@ public class EnemyMove : IState
         detectionRadar = enemy.transform.Find("Detection Radar").gameObject;
         travelingPath = new List<AStarNode>();
         currentDestination = TargetDestination.ORIGINAL_LOCATION;
-        decoyTarget = null;
         DetermineAnimation(Vector3.zero, startingDirection);
     }
     public void Execute()
     {
-        Debug.Log("Execution");
-
         if (currentPatrolType != PatrolTypes.STANDING)
         {
             TravelPath();
@@ -93,8 +89,6 @@ public class EnemyMove : IState
     {
         Vector3 flooredDestination = new Vector3(Mathf.Floor(destination.x) + 0.5f, Mathf.Floor(destination.y) + 0.5f, destination.z);
         travelingPath = levelPath.FindPath(enemy.transform.position, flooredDestination);
-        Debug.Log(travelingPath.Count);
-        Debug.Log("Moving");
     }
 
     private List<AStarNode> CalculatePath(Vector3 destination)
