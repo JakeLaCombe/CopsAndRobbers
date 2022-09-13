@@ -23,6 +23,11 @@ public class Enemy : MonoBehaviour
     {
         stateMachine.currentState.Execute();
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        stateMachine.currentState.OnTriggerEnter2D(other);
+    }
 }
 
 
@@ -30,4 +35,5 @@ public enum PatrolTypes
 {
     STANDING,
     MOVING,
+    MOVE_AND_WAIT
 }

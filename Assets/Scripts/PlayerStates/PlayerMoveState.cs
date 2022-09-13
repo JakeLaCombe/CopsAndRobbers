@@ -27,10 +27,6 @@ public class PlayerMoveState : IState
         float vx = player.rigidBody.velocity.x;
         float vy = player.rigidBody.velocity.y;
 
-
-        Debug.Log(player.input.LeftHold());
-        Debug.Log(player.input.Left());
-
         if (player.input.LeftHold())
         {
             vx = -3.0f;
@@ -117,8 +113,11 @@ public class PlayerMoveState : IState
 
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        // no-op
+        if (collider.tag == "EnemyRadar")
+        {
+            GameObject.Destroy(player.gameObject);
+        }
     }
 }

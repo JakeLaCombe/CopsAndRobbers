@@ -17,6 +17,8 @@ public class EnemyMove : IState
     private Vector3 originalPosition;
     private Vector3 patrolDestination;
     private Vector3 startingDirection;
+    private Coroutine delayedMovement;
+
     private float speed = 1.0f;
 
     enum PathState
@@ -127,18 +129,40 @@ public class EnemyMove : IState
         else if (currentDestination == TargetDestination.ORIGINAL_LOCATION && initialPatrolType != PatrolTypes.STANDING)
         {
             speed = 1.0f;
-            GeneratePath(patrolDestination);
-            currentDestination = TargetDestination.PATROL_DESTINATION;
-            animator.SetBool("isRunning", false);
-            DetermineAnimation(Vector3.zero, startingDirection);
+
+            if (initialPatrolType == PatrolTypes.MOVE_AND_WAIT)
+            {
+                if (delayedMovement == null)
+                {
+                    delayedMovement = this.enemy.StartCoroutine(DelayedMove(patrolDestination, PatrolTypes.MOVING, TargetDestination.PATROL_DESTINATION));
+                }
+            }
+            else
+            {
+                GeneratePath(patrolDestination);
+                currentDestination = TargetDestination.PATROL_DESTINATION;
+                animator.SetBool("isRunning", false);
+                DetermineAnimation(Vector3.zero, startingDirection);
+            }
         }
         else if (currentDestination == TargetDestination.PATROL_DESTINATION)
         {
             speed = 1.0f;
-            GeneratePath(originalPosition);
-            currentPatrolType = PatrolTypes.MOVING;
-            currentDestination = TargetDestination.ORIGINAL_LOCATION;
-            animator.SetBool("isRunning", false);
+
+            if (initialPatrolType == PatrolTypes.MOVE_AND_WAIT)
+            {
+                if (delayedMovement == null)
+                {
+                    delayedMovement = this.enemy.StartCoroutine(DelayedMove(originalPosition, PatrolTypes.MOVING, TargetDestination.ORIGINAL_LOCATION));
+                }
+            }
+            else
+            {
+                GeneratePath(originalPosition);
+                currentPatrolType = PatrolTypes.MOVING;
+                currentDestination = TargetDestination.ORIGINAL_LOCATION;
+                animator.SetBool("isRunning", false);
+            }
         }
         else
         {
@@ -214,11 +238,24 @@ public class EnemyMove : IState
         enemy.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    private IEnumerator DelayedMove(Vector3 targetDestination, PatrolTypes patrolType, TargetDestination targetDestinationType)
     {
-        if (other.tag == "Mocking Bird")
+        animator.SetBool("isRunning", false);
+        yield return new WaitForSeconds(4.0f);
+
+        DetermineAnimation(Vector3.zero, startingDirection);
+        GeneratePath(targetDestination);
+        currentPatrolType = patrolType;
+        currentDestination = targetDestinationType;
+
+        delayedMovement = null;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
         {
-            GameObject.Destroy(other.gameObject);
+            GameObject.Destroy(enemy.gameObject);
         }
     }
 }
