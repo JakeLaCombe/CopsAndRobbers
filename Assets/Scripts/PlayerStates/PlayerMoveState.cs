@@ -118,6 +118,11 @@ public class PlayerMoveState : IState
         if (collider.tag == "EnemyRadar")
         {
             GameObject.Destroy(player.gameObject);
+
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.copCount -= 1;
+            }
         }
     }
 }

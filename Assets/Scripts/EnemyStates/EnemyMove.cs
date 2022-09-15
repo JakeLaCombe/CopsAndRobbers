@@ -256,6 +256,11 @@ public class EnemyMove : IState
         if (collider.tag == "Player")
         {
             GameObject.Destroy(enemy.gameObject);
+
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.copCount += 1;
+            }
         }
     }
 }
