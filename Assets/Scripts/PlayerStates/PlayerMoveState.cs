@@ -121,7 +121,7 @@ public class PlayerMoveState : IState
 
             if (GameManager.instance != null)
             {
-                GameManager.instance.copCount -= 1;
+                GameManager.instance.LoseLife();
             }
         }
     }

@@ -8,9 +8,12 @@ public class UIUpdater : MonoBehaviour
     // Start is called before the first frame update
     public GameObject BaseCanvas;
     private TextMeshProUGUI CopCount;
+    private TextMeshProUGUI GameStatus;
+
     void Start()
     {
         CopCount = BaseCanvas.transform.Find("CopCount").GetComponent<TextMeshProUGUI>();
+        GameStatus = BaseCanvas.transform.Find("GameStatus").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -18,7 +21,22 @@ public class UIUpdater : MonoBehaviour
     {
         if (GameManager.instance)
         {
-            CopCount.text = "x " + GameManager.instance.copCount.ToString();
+            UpdateDisplay(GameManager.instance);
+        }
+    }
+
+    private void UpdateDisplay(GameManager gameManager)
+    {
+        CopCount.text = "x " + gameManager.copCount.ToString();
+
+        if (gameManager.gameStatus == global::GameStatus.GAME_OVER)
+        {
+            GameStatus.enabled = true;
+            GameStatus.text = "Game Over";
+        }
+        else
+        {
+            GameStatus.enabled = false;
         }
     }
 }
