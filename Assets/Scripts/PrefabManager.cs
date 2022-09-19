@@ -6,6 +6,7 @@ public class PrefabManager : MonoBehaviour
 {
     public static PrefabManager instance;
     public Player PLAYER;
+    public GameObject STATIONARY_GUARD;
 
     void Start()
     {

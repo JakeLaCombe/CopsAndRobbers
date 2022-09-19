@@ -14,6 +14,7 @@ public class ActionPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Triggered Inside");
         currentObjects.Add(other.gameObject);
     }
 

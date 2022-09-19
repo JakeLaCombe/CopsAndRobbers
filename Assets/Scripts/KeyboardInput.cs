@@ -60,7 +60,7 @@ public class KeyboardInput : MonoBehaviour, IInputable
         return Input.GetKeyDown(PICKUP);
     }
 
-    public bool DropDecoy()
+    public bool DropSecurityGuard()
     {
         return Input.GetKeyDown(DECOY_DROP);
     }

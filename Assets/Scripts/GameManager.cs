@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void LoseLife()
     {
         if (copCount > 0)

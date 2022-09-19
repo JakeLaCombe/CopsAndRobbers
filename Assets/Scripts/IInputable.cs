@@ -12,7 +12,7 @@ public interface IInputable
     bool Right();
     bool RightHold();
     bool PickUp();
-    bool DropDecoy();
+    bool DropSecurityGuard();
     bool DropGas();
     bool ShootVaccine();
     bool Pause();

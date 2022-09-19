@@ -9,11 +9,12 @@ public class PlayerMoveState : IState
     Player player;
 
     private Vector2[] detectionPoints = {
-        new Vector2(-1.0f, 0.0f),
-        new Vector2(1.0f, 0.0f),
+        new Vector2(-0.5f, 0.0f),
+        new Vector2(0.5f, 0.0f),
         new Vector2(0.0f, 0.5f),
         new Vector2(0.0f, -0.5f)
     };
+
     public PlayerMoveState(Player player)
     {
         this.player = player;
@@ -77,6 +78,17 @@ public class PlayerMoveState : IState
             vy = 0.0f;
         }
 
+        if (player.input.PickUp())
+        {
+            processAction();
+        }
+
+        if (player.input.DropSecurityGuard() && GameManager.instance != null && GameManager.instance.copCount > 0)
+        {
+            GameManager.instance.copCount -= 1;
+            GameObject.Instantiate(PrefabManager.instance.STATIONARY_GUARD, player.gameObject.transform.position, Quaternion.identity);
+        }
+
         player.rigidBody.velocity = new Vector2(
            vx,
            vy
@@ -89,17 +101,15 @@ public class PlayerMoveState : IState
     {
         if (player.GetTouchingObjects().Count > 0)
         {
-            GameObject wall = player.GetTouchingObjects().Find(delegate (GameObject bk)
-                {
-                    return bk.name == "Wall";
-                }
-            );
-
-            if (wall != null)
+            player.GetTouchingObjects().ForEach(delegate (GameObject touchingObject)
             {
-                Vector3Int position = Vector3Int.FloorToInt(player.actionPoint.transform.position);
-                position.z = 0;
-            }
+                IPlayerActionable actionable = touchingObject.GetComponent<IPlayerActionable>();
+
+                if (actionable != null)
+                {
+                    actionable.PlayerAction(player);
+                }
+            });
         }
     }
 
