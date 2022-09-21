@@ -253,6 +253,8 @@ public class EnemyMove : IState
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("Collider");
+
         if (collider.tag == "Player")
         {
             GameObject.Destroy(enemy.gameObject);
@@ -261,6 +263,21 @@ public class EnemyMove : IState
             {
                 GameManager.instance.copCount += 1;
             }
+        }
+
+        if (collider.tag == "Enemy")
+        {
+            GameObject.Destroy(collider.gameObject);
+        }
+
+        if (collider.tag == "GuardRadar")
+        {
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.copCount += 1;
+            }
+
+            GameObject.Destroy(enemy.gameObject);
         }
     }
 }

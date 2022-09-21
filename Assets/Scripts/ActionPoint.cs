@@ -14,7 +14,6 @@ public class ActionPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Triggered Inside");
         currentObjects.Add(other.gameObject);
     }
 
@@ -30,5 +29,14 @@ public class ActionPoint : MonoBehaviour
     {
         currentObjects = currentObjects.FindAll(item => item != null);
         return currentObjects;
+    }
+
+    void Update()
+    {
+        Debug.Log("Objects");
+        currentObjects.ForEach(delegate (GameObject gb)
+        {
+            Debug.Log(gb.name);
+        });
     }
 }

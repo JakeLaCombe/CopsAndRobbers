@@ -103,7 +103,9 @@ public class PlayerMoveState : IState
         {
             player.GetTouchingObjects().ForEach(delegate (GameObject touchingObject)
             {
-                IPlayerActionable actionable = touchingObject.GetComponent<IPlayerActionable>();
+                IPlayerActionable actionable = touchingObject.GetComponentInParent<IPlayerActionable>();
+
+                Debug.Log(player.GetTouchingObjects().Count);
 
                 if (actionable != null)
                 {

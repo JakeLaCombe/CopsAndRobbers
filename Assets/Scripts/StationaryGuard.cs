@@ -21,7 +21,7 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
 
     void Start()
     {
-        GuardRadar = this.transform.Find("GuardRadar").gameObject;
+        GuardRadar = this.transform.parent.Find("GuardRadar").gameObject;
 
         GuardRadar.transform.localPosition = new Vector3(radarPoints[(int)initialDirection].x, radarPoints[(int)initialDirection].y, 0.0f);
         GuardRadar.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, radarRotations[(int)initialDirection]);
@@ -34,6 +34,8 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
 
     public void PlayerAction(Player player)
     {
+        Debug.Log("Implemeting a Rotation");
+
         if (initialDirection == AssistantDirections.LEFT)
         {
             initialDirection = AssistantDirections.UP;
@@ -51,8 +53,18 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
             initialDirection = AssistantDirections.LEFT;
         }
 
+        Debug.Log(initialDirection);
+
         GuardRadar.transform.localPosition = new Vector3(radarPoints[(int)initialDirection].x, radarPoints[(int)initialDirection].y, 0.0f);
         GuardRadar.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, radarRotations[(int)initialDirection]);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "EnemyRadar")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
 
