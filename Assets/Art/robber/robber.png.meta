@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,6 +97,30 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -813,7 +837,6 @@ TextureImporter:
       robber27: 2360795766729601039
       robber26: -1982036695934197157
       robber08: 166385178278775464
-      robber25: -7634307303431971557
       robber03: -3815732234927389854
       robber11: -1912187300344208015
       robber07: -1300459068809977975
@@ -838,10 +861,11 @@ TextureImporter:
       robber13: -1376975288051054842
       robber23: -8735112191575115925
       robber06: -467335468037784693
+      robber25: -7634307303431971557
       robber12: -7973704216997892841
       robber02: 3668115205511685818
-      robber20: -5044221907339921113
       robber17: -4088330413131514293
+      robber20: -5044221907339921113
       robber18: -2228862374856202354
   spritePackingTag: 
   pSDRemoveMatte: 0
