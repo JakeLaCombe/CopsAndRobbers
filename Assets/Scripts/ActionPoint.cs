@@ -30,13 +30,4 @@ public class ActionPoint : MonoBehaviour
         currentObjects = currentObjects.FindAll(item => item != null);
         return currentObjects;
     }
-
-    void Update()
-    {
-        Debug.Log("Objects");
-        currentObjects.ForEach(delegate (GameObject gb)
-        {
-            Debug.Log(gb.name);
-        });
-    }
 }

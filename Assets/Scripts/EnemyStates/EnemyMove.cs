@@ -257,11 +257,10 @@ public class EnemyMove : IState
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Collider");
-
         if (collider.tag == "Player")
         {
             GameObject.Destroy(enemy.gameObject);
+            GameObject.Instantiate(PrefabManager.instance.SMOKE, enemy.transform.position, Quaternion.identity);
 
             if (GameManager.instance != null)
             {
@@ -272,6 +271,7 @@ public class EnemyMove : IState
         if (collider.tag == "GuardCollider")
         {
             GameObject.Destroy(collider.transform.parent.gameObject);
+            GameObject.Instantiate(PrefabManager.instance.SMOKE, collider.transform.position, Quaternion.identity);
         }
 
         if (collider.tag == "GuardRadar")
@@ -280,6 +280,8 @@ public class EnemyMove : IState
             {
                 GameManager.instance.copCount += 1;
             }
+
+            GameObject.Instantiate(PrefabManager.instance.SMOKE, enemy.gameObject.transform.position, Quaternion.identity);
 
             GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(collider.transform.parent.gameObject);

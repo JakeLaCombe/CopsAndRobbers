@@ -117,8 +117,6 @@ public class PlayerMoveState : IState
             {
                 IPlayerActionable actionable = touchingObject.GetComponentInParent<IPlayerActionable>();
 
-                Debug.Log(player.GetTouchingObjects().Count);
-
                 if (actionable != null)
                 {
                     actionable.PlayerAction(player);
@@ -142,6 +140,7 @@ public class PlayerMoveState : IState
         if (collider.tag == "EnemyRadar")
         {
             GameObject.Destroy(player.gameObject);
+            GameObject.Instantiate(PrefabManager.instance.SMOKE, player.transform.position, Quaternion.identity);
 
             if (GameManager.instance != null)
             {
