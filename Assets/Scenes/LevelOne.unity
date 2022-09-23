@@ -832,7 +832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.586733, y: -14.5, z: -2}
+  m_LocalPosition: {x: 29.656597, y: -14.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28646,7 +28646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStatus: 0
-  copCount: 3
+  copCount: 0
   robberCount: 10
   virtualCamera: {fileID: 0}
 --- !u!4 &1057303998
@@ -29268,7 +29268,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4029126, y: 1}
+    m_SensorSize: {x: 1.3927711, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
