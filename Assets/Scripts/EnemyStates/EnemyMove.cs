@@ -101,10 +101,14 @@ public class EnemyMove : IState
 
     public void NewDestination(Vector3 newPosition)
     {
-        speed = 8.0f;
         Vector3 flooredPosition = new Vector3(Mathf.Floor(newPosition.x) + 0.5f, Mathf.Floor(newPosition.y) + 0.5f, newPosition.z);
-        travelingPath = levelPath.FindPath(enemy.transform.position, flooredPosition);
-        currentDestination = TargetDestination.PATROL_DESTINATION;
+        List<AStarNode> possiblePath = levelPath.FindPath(enemy.transform.position, flooredPosition);
+
+        if (possiblePath.Count < 20)
+        {
+            speed = 4.0f;
+            travelingPath = levelPath.FindPath(enemy.transform.position, flooredPosition);
+        }
     }
 
     private void TravelPath()
@@ -265,9 +269,9 @@ public class EnemyMove : IState
             }
         }
 
-        if (collider.tag == "Enemy")
+        if (collider.tag == "GuardCollider")
         {
-            GameObject.Destroy(collider.gameObject);
+            GameObject.Destroy(collider.transform.parent.gameObject);
         }
 
         if (collider.tag == "GuardRadar")
@@ -278,6 +282,7 @@ public class EnemyMove : IState
             }
 
             GameObject.Destroy(enemy.gameObject);
+            GameObject.Destroy(collider.transform.parent.gameObject);
         }
     }
 }

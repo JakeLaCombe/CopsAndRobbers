@@ -83,6 +83,18 @@ public class PlayerMoveState : IState
             processAction();
         }
 
+        if (player.input.Whistle())
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                Enemy enemy = enemies[i].GetComponent<Enemy>();
+                enemy.SetNewDestination(player.transform.position);
+            }
+
+        }
+
         if (player.input.DropSecurityGuard() && GameManager.instance != null && GameManager.instance.copCount > 0)
         {
             GameManager.instance.copCount -= 1;

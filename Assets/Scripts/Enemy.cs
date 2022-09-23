@@ -28,6 +28,14 @@ public class Enemy : MonoBehaviour
     {
         stateMachine.currentState.OnTriggerEnter2D(other);
     }
+
+    public void SetNewDestination(Vector3 newDestination)
+    {
+        if (stateMachine.currentState == enemyMoveState)
+        {
+            enemyMoveState.NewDestination(newDestination);
+        }
+    }
 }
 
 

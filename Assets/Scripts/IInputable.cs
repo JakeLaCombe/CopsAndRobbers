@@ -14,7 +14,7 @@ public interface IInputable
     bool PickUp();
     bool DropSecurityGuard();
     bool DropGas();
-    bool ShootVaccine();
+    bool Whistle();
     bool Pause();
     bool StartButton();
 }

@@ -9,7 +9,7 @@ public class KeyboardInput : MonoBehaviour, IInputable
     public KeyCode LEFT = KeyCode.LeftArrow;
     public KeyCode RIGHT = KeyCode.RightArrow;
     public KeyCode DECOY_DROP = KeyCode.Z;
-    public KeyCode VACCINE_SHOOT = KeyCode.X;
+    public KeyCode WHISTLE = KeyCode.X;
     public KeyCode GAS_DROP = KeyCode.C;
     public KeyCode PICKUP = KeyCode.Space;
     public KeyCode PAUSE = KeyCode.Return;
@@ -70,9 +70,9 @@ public class KeyboardInput : MonoBehaviour, IInputable
         return Input.GetKeyDown(GAS_DROP);
     }
 
-    public bool ShootVaccine()
+    public bool Whistle()
     {
-        return Input.GetKeyDown(VACCINE_SHOOT);
+        return Input.GetKeyDown(WHISTLE);
     }
 
     public bool Pause()

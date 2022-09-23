@@ -43,8 +43,6 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
 
     public void PlayerAction(Player player)
     {
-        Debug.Log("Implemeting a Rotation");
-
         if (initialDirection == AssistantDirections.LEFT)
         {
             initialDirection = AssistantDirections.UP;
