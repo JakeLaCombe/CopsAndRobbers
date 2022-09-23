@@ -65,27 +65,11 @@ public class EnemyMove : IState
     }
     public void Execute()
     {
-        if (currentPatrolType != PatrolTypes.STANDING)
-        {
-            TravelPath();
-        }
-
-        // GameObject decoy = GameObject.FindGameObjectWithTag("Mocking Bird");
-
-        // if (decoy != null && decoy != decoyTarget)
+        // if (currentPatrolType != PatrolTypes.STANDING)
         // {
-        //     List<AStarNode> nextPath = CalculatePath(GameObject.FindGameObjectWithTag("Mocking Bird").transform.position);
-
-        //     if (nextPath.Count < 20)
-        //     {
-        //         decoyTarget = decoy;
-        //         currentDestination = TargetDestination.PATROL_DESTINATION;
-        //         currentPatrolType = PatrolTypes.MOVING;
-        //         travelingPath = nextPath;
-        //     }
-        // }
+        TravelPath();
+        //  }
     }
-
 
     private void GeneratePath(Vector3 destination)
     {
@@ -149,7 +133,7 @@ public class EnemyMove : IState
                 DetermineAnimation(Vector3.zero, startingDirection);
             }
         }
-        else if (currentDestination == TargetDestination.PATROL_DESTINATION)
+        else if (currentDestination == TargetDestination.PATROL_DESTINATION || (currentDestination == TargetDestination.ORIGINAL_LOCATION && initialPatrolType == PatrolTypes.STANDING))
         {
             speed = 1.0f;
 
