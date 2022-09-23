@@ -8,6 +8,8 @@ public class PlayerMoveState : IState
 {
     Player player;
 
+    private Coroutine WhistleReset;
+
     private Vector2[] detectionPoints = {
         new Vector2(-0.5f, 0.0f),
         new Vector2(0.5f, 0.0f),
@@ -85,6 +87,15 @@ public class PlayerMoveState : IState
 
         if (player.input.Whistle())
         {
+            player.transform.Find("Whistle").gameObject.SetActive(true);
+
+            if (WhistleReset != null)
+            {
+                player.StopCoroutine(WhistleReset);
+            }
+
+            WhistleReset = player.StartCoroutine(ResetWhistle());
+
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
             for (int i = 0; i < enemies.Length; i++)
@@ -147,5 +158,11 @@ public class PlayerMoveState : IState
                 GameManager.instance.LoseLife();
             }
         }
+    }
+
+    private IEnumerator ResetWhistle()
+    {
+        yield return new WaitForSeconds(2.0f);
+        player.transform.Find("Whistle").gameObject.SetActive(false);
     }
 }
