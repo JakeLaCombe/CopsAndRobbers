@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameStatus gameStatus;
     public int copCount = 0;
+    public int robberCount = 10;
     public CinemachineVirtualCamera virtualCamera;
 
     // Start is called before the first frame update
@@ -16,12 +18,14 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
         }
         else if (instance != this)
         {
             Destroy(this);
         }
+
+        robberCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        gameStatus = GameStatus.GAME_IN_PROGRESS;
     }
 
     public void LoseLife()
@@ -35,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             gameStatus = GameStatus.GAME_OVER;
         }
+
     }
 
     // Update is called once per frame
@@ -49,6 +54,13 @@ public class GameManager : MonoBehaviour
         {
             CheckGameConditions();
         }
+
+        if (gameStatus == GameStatus.LEVEL_COMPLETE)
+        {
+            gameStatus = GameStatus.TRANSITIONING;
+            StartCoroutine(NextScene());
+
+        }
     }
 
     void CheckGameConditions()
@@ -57,17 +69,29 @@ public class GameManager : MonoBehaviour
         {
             gameStatus = GameStatus.GAME_OVER;
         }
+
+        if (robberCount <= 0)
+        {
+            gameStatus = GameStatus.LEVEL_COMPLETE;
+        }
     }
 
 
     private IEnumerator RespawnCoroutine()
     {
+        Debug.Log("Respawning");
         yield return new WaitForSeconds(3.0f);
         GameObject player = GameObject.Instantiate(PrefabManager.instance.PLAYER.gameObject, GameObject.Find("Starting Point").transform.position, Quaternion.identity);
 
         virtualCamera.Follow = player.transform;
         virtualCamera.LookAt = player.transform;
         virtualCamera.UpdateCameraState(Vector3.up, 10f);
+    }
+
+    private IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(0);
     }
 }
 
@@ -77,5 +101,6 @@ public enum GameStatus
     GAME_COMPLETE,
     GAME_IN_PROGRESS,
     LEVEL_COMPLETE,
+    TRANSITIONING,
     GAME_OVER,
 }

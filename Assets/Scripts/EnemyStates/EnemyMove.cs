@@ -249,6 +249,7 @@ public class EnemyMove : IState
             if (GameManager.instance != null)
             {
                 GameManager.instance.copCount += 1;
+                GameManager.instance.robberCount -= 1;
             }
         }
 
@@ -263,6 +264,7 @@ public class EnemyMove : IState
             if (GameManager.instance != null)
             {
                 GameManager.instance.copCount += 1;
+                GameManager.instance.robberCount -= 1;
             }
 
             GameObject.Instantiate(PrefabManager.instance.SMOKE, enemy.gameObject.transform.position, Quaternion.identity);

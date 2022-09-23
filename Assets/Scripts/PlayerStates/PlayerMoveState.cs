@@ -148,6 +148,8 @@ public class PlayerMoveState : IState
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("Collided");
+        Debug.Log(player.gameObject.name);
         if (collider.tag == "EnemyRadar")
         {
             GameObject.Destroy(player.gameObject);
