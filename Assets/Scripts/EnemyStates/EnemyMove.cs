@@ -16,6 +16,7 @@ public class EnemyMove : IState
     GameObject level;
     private Vector3 originalPosition;
     private Vector3 patrolDestination;
+    private Vector3 patrolDestinationStandingDirection;
     private Vector3 startingDirection;
     private Coroutine delayedMovement;
 
@@ -44,7 +45,7 @@ public class EnemyMove : IState
         new Vector2(0.0f, -1.0f)
     };
 
-    public EnemyMove(Enemy enemy, PatrolTypes patrolType, Vector3 patrolDestination, Vector3 startingDirection)
+    public EnemyMove(Enemy enemy, PatrolTypes patrolType, Vector3 patrolDestination, Vector3 startingDirection, Vector3 patrolDestinationStandingDirection)
     {
         this.enemy = enemy;
         this.initialPatrolType = patrolType;
@@ -52,6 +53,7 @@ public class EnemyMove : IState
         this.patrolDestination = patrolDestination;
         this.originalPosition = enemy.transform.position;
         this.startingDirection = startingDirection;
+        this.patrolDestinationStandingDirection = patrolDestinationStandingDirection;
     }
     public void Enter()
     {
@@ -150,10 +152,12 @@ public class EnemyMove : IState
                 currentPatrolType = PatrolTypes.MOVING;
                 currentDestination = TargetDestination.ORIGINAL_LOCATION;
                 animator.SetBool("isRunning", false);
+                DetermineAnimation(Vector3.zero, startingDirection);
             }
         }
         else
         {
+            Debug.Log("Freezing");
             Freeze();
         }
     }
@@ -224,14 +228,32 @@ public class EnemyMove : IState
         currentPatrolType = PatrolTypes.STANDING;
         animator.SetBool("isRunning", false);
         enemy.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+        if (currentDestination == TargetDestination.PATROL_DESTINATION)
+        {
+            DetermineAnimation(Vector3.zero, patrolDestinationStandingDirection);
+        }
+        else
+        {
+            DetermineAnimation(Vector3.zero, startingDirection);
+        }
     }
 
     private IEnumerator DelayedMove(Vector3 targetDestination, PatrolTypes patrolType, TargetDestination targetDestinationType)
     {
         animator.SetBool("isRunning", false);
+
+        if (currentDestination == TargetDestination.PATROL_DESTINATION)
+        {
+            DetermineAnimation(Vector3.zero, patrolDestinationStandingDirection);
+        }
+        else
+        {
+            DetermineAnimation(Vector3.zero, startingDirection);
+        }
+
         yield return new WaitForSeconds(4.0f);
 
-        DetermineAnimation(Vector3.zero, startingDirection);
         GeneratePath(targetDestination);
         currentPatrolType = patrolType;
         currentDestination = targetDestinationType;
@@ -255,6 +277,7 @@ public class EnemyMove : IState
 
         if (collider.tag == "GuardCollider")
         {
+            Debug.Log("Hitting the Enemy Radar");
             GameObject.Destroy(collider.transform.parent.gameObject);
             GameObject.Instantiate(PrefabManager.instance.SMOKE, collider.transform.position, Quaternion.identity);
         }

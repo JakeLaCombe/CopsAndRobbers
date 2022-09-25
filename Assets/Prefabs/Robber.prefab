@@ -110,11 +110,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7306676, y: -0.22466373}
-      - {x: 0.7423105, y: 0.22801948}
-      - {x: 0.24943924, y: 0.2736451}
-      - {x: -0.5697947, y: 0.041564733}
-      - {x: 0.19998986, y: -0.2663766}
+    - - {x: 0.39351332, y: -0.14472103}
+      - {x: 0.38160002, y: 0.19078803}
+      - {x: -0.1645559, y: 0.2516381}
+      - {x: -0.91368705, y: 0.0026338398}
+      - {x: -0.13473809, y: -0.23533833}
   m_UseDelaunayMesh: 0
 --- !u!1 &3075745486088026990
 GameObject:
@@ -219,6 +219,7 @@ MonoBehaviour:
   patrolType: 2
   patrolDestination: {x: 10.5, y: 2.5, z: 0}
   startingDirection: {x: -8, y: -1, z: 1}
+  patrolDestinationStandingDirection: {x: 1, y: 1, z: 1}
 --- !u!95 &3075745486088026981
 Animator:
   serializedVersion: 4

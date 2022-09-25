@@ -832,7 +832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.656597, y: -14.5, z: -2}
+  m_LocalPosition: {x: 28.949987, y: -14.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28646,7 +28646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStatus: 0
-  copCount: 0
+  copCount: 3
   robberCount: 10
   virtualCamera: {fileID: 0}
 --- !u!4 &1057303998
@@ -29268,7 +29268,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3927711, y: 1}
+    m_SensorSize: {x: 1.4953271, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -85434,6 +85434,14 @@ PrefabInstance:
     - target: {fileID: 3075745486088026984, guid: 9f201a0b22331bd4b9505b20b79fef05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075745486088026986, guid: 9f201a0b22331bd4b9505b20b79fef05, type: 3}
+      propertyPath: patrolDestinationStandingDirection.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075745486088026986, guid: 9f201a0b22331bd4b9505b20b79fef05, type: 3}
+      propertyPath: patrolDestinationStandingDirection.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3075745486088026990, guid: 9f201a0b22331bd4b9505b20b79fef05, type: 3}
       propertyPath: m_Name

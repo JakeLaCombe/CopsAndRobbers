@@ -84,7 +84,8 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
     {
         if (other.tag == "EnemyRadar")
         {
-            Destroy(this.gameObject);
+            GameObject.Instantiate(PrefabManager.instance.SMOKE, this.transform.parent.transform.position, Quaternion.identity);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 }

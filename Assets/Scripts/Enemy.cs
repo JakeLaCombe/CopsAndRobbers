@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour
     public EnemyMove enemyMoveState;
     public Vector3 startingDirection = new Vector3(1.0f, 1.0f, 1.0f);
 
+    public Vector3 patrolDestinationStandingDirection = new Vector3(1.0f, 1.0f, 1.0f);
+
     // Start is called before the first frame update
     void Start()
     {
         stateMachine = new StateMachine();
-        enemyMoveState = new EnemyMove(this, patrolType, patrolDestination, startingDirection);
+        enemyMoveState = new EnemyMove(this, patrolType, patrolDestination, startingDirection, patrolDestinationStandingDirection);
         stateMachine.ChangeState(enemyMoveState);
     }
 
