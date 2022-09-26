@@ -88,6 +88,7 @@ public class PlayerMoveState : IState
         if (player.input.Whistle())
         {
             player.transform.Find("Whistle").gameObject.SetActive(true);
+            SoundManager.instance.WHISTLE.Play();
 
             if (WhistleReset != null)
             {
@@ -109,6 +110,7 @@ public class PlayerMoveState : IState
         if (player.input.DropSecurityGuard() && GameManager.instance != null && GameManager.instance.copCount > 0)
         {
             GameManager.instance.copCount -= 1;
+            SoundManager.instance.ROTATE.Play();
             GameObject.Instantiate(PrefabManager.instance.STATIONARY_GUARD, player.gameObject.transform.position, Quaternion.identity);
         }
 

@@ -43,6 +43,8 @@ public class StationaryGuard : MonoBehaviour, IPlayerActionable
 
     public void PlayerAction(Player player)
     {
+        SoundManager.instance.ROTATE.Play();
+
         if (initialDirection == AssistantDirections.LEFT)
         {
             initialDirection = AssistantDirections.UP;

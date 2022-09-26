@@ -10,6 +10,7 @@ public class Smoke : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        SoundManager.instance.SMOKE.Play();
     }
 
     // Update is called once per frame
