@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SMOKE: {fileID: 0}
   ROTATE: {fileID: 0}
+  WHISTLE: {fileID: 0}
 --- !u!1 &72968080
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.949993, y: -14.5, z: -2}
+  m_LocalPosition: {x: 24.354015, y: -14.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12553,7 +12554,7 @@ GameObject:
   - component: {fileID: 1629094086}
   - component: {fileID: 1629094085}
   m_Layer: 0
-  m_Name: CopsNRobbers_01v04
+  m_Name: CopsNRobbers_01v05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12569,7 +12570,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a291ea444f83b94696d79c6c5d719ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 55d554096d0faa245b3dac45d7535bf7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -13008,7 +13009,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4953271, y: 1}
+    m_SensorSize: {x: 2.1623762, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
