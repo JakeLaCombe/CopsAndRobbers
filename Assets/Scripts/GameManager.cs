@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int robberCount = 10;
     public CinemachineVirtualCamera virtualCamera;
     public Coroutine restartGameCoroutine;
+    public float secondsRemaining = 180.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         if (gameStatus == GameStatus.GAME_IN_PROGRESS)
         {
+            secondsRemaining -= Time.deltaTime;
             CheckGameConditions();
         }
 
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     void CheckGameConditions()
     {
-        if (copCount < 0)
+        if (copCount < 0 || secondsRemaining < 0)
         {
             gameStatus = GameStatus.GAME_OVER;
 

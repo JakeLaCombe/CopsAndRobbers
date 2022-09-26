@@ -10,12 +10,14 @@ public class UIUpdater : MonoBehaviour
     private TextMeshProUGUI CopCount;
     private TextMeshProUGUI GameStatus;
     private TextMeshProUGUI RobberCount;
+    private TextMeshProUGUI Timer;
 
     void Start()
     {
         CopCount = BaseCanvas.transform.Find("CopCount").GetComponent<TextMeshProUGUI>();
         GameStatus = BaseCanvas.transform.Find("GameStatus").GetComponent<TextMeshProUGUI>();
         RobberCount = BaseCanvas.transform.Find("RobberCount").GetComponent<TextMeshProUGUI>();
+        Timer = BaseCanvas.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class UIUpdater : MonoBehaviour
     {
         CopCount.text = "x " + gameManager.copCount.ToString();
         RobberCount.text = "x " + gameManager.robberCount.ToString();
+        Timer.text = "Time: " + Mathf.CeilToInt(gameManager.secondsRemaining);
 
         if (gameManager.gameStatus == global::GameStatus.GAME_OVER)
         {
