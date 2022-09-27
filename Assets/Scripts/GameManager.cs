@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
-        Debug.Log("Restarting");
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(0);
     }
@@ -111,7 +110,16 @@ public class GameManager : MonoBehaviour
     private IEnumerator NextScene()
     {
         yield return new WaitForSeconds(3.0f);
-        SceneManager.LoadScene(0);
+
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
     }
 }
 
