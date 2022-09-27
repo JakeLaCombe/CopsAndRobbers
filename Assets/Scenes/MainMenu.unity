@@ -1772,12 +1772,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 439816268}
   - {fileID: 633851971}
   - {fileID: 990449038}
   - {fileID: 42318480}
-  - {fileID: 1120595851}
   - {fileID: 517150032}
-  - {fileID: 439816268}
+  - {fileID: 1120595851}
   m_Father: {fileID: 1935705110}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2292,19 +2292,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Organizer - Ahmed Hamed
 
-    Artist - GuyW
+    Artist - Guy (Wolfer122)
+
+    Game Design
+    - Noah Bumgardner
+
+    Music - Adam (MemoryCanyon)
 
     Programmer - Jake LaCombe
     (TwistedHawk)
 
-    Programmer - Alex Chheng (KingdomCross)
-
-    Music - Adam
-    (MemoryCanyon)
-
-    Contributer - Vorce Shard
-
-'
+    Programmer - Alex Chheng (KingdomCross)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -2331,8 +2329,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
