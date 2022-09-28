@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
         stateMachine.currentState.OnTriggerEnter2D(other);
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log(other.gameObject.name);
+    }
+
     public List<GameObject> GetTouchingObjects()
     {
         return actionPoint.getActiveObjects();

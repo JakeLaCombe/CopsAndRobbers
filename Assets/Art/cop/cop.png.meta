@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 171
+        y: 137
         width: 32
         height: 32
       alignment: 0
@@ -156,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 35
-        y: 171
+        y: 137
         width: 32
         height: 32
       alignment: 0
@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 171
+        y: 137
         width: 32
         height: 32
       alignment: 0
@@ -198,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 103
-        y: 171
+        y: 137
         width: 32
         height: 32
       alignment: 0
@@ -219,7 +219,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 137
-        y: 171
+        y: 137
         width: 32
         height: 32
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: cop05
       rect:
         serializedVersion: 2
-        x: 171
-        y: 171
+        x: 1
+        y: 103
         width: 32
         height: 32
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: cop06
       rect:
         serializedVersion: 2
-        x: 1
-        y: 137
+        x: 35
+        y: 103
         width: 32
         height: 32
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: cop07
       rect:
         serializedVersion: 2
-        x: 35
-        y: 137
+        x: 69
+        y: 103
         width: 32
         height: 32
       alignment: 0
@@ -302,8 +302,8 @@ TextureImporter:
       name: cop08
       rect:
         serializedVersion: 2
-        x: 69
-        y: 137
+        x: 103
+        y: 103
         width: 32
         height: 32
       alignment: 0
@@ -323,8 +323,8 @@ TextureImporter:
       name: cop09
       rect:
         serializedVersion: 2
-        x: 103
-        y: 137
+        x: 137
+        y: 103
         width: 32
         height: 32
       alignment: 0
@@ -344,8 +344,8 @@ TextureImporter:
       name: cop10
       rect:
         serializedVersion: 2
-        x: 137
-        y: 137
+        x: 1
+        y: 69
         width: 32
         height: 32
       alignment: 0
@@ -365,8 +365,8 @@ TextureImporter:
       name: cop11
       rect:
         serializedVersion: 2
-        x: 171
-        y: 137
+        x: 35
+        y: 69
         width: 32
         height: 32
       alignment: 0
@@ -386,8 +386,8 @@ TextureImporter:
       name: cop12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 103
+        x: 69
+        y: 69
         width: 32
         height: 32
       alignment: 0
@@ -407,8 +407,8 @@ TextureImporter:
       name: cop13
       rect:
         serializedVersion: 2
-        x: 35
-        y: 103
+        x: 103
+        y: 69
         width: 32
         height: 32
       alignment: 0
@@ -428,8 +428,8 @@ TextureImporter:
       name: cop14
       rect:
         serializedVersion: 2
-        x: 69
-        y: 103
+        x: 137
+        y: 69
         width: 32
         height: 32
       alignment: 0
@@ -449,8 +449,8 @@ TextureImporter:
       name: cop15
       rect:
         serializedVersion: 2
-        x: 103
-        y: 103
+        x: 1
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -470,8 +470,8 @@ TextureImporter:
       name: cop16
       rect:
         serializedVersion: 2
-        x: 137
-        y: 103
+        x: 35
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -491,8 +491,8 @@ TextureImporter:
       name: cop17
       rect:
         serializedVersion: 2
-        x: 171
-        y: 103
+        x: 69
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -512,8 +512,8 @@ TextureImporter:
       name: cop18
       rect:
         serializedVersion: 2
-        x: 1
-        y: 69
+        x: 103
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -533,8 +533,8 @@ TextureImporter:
       name: cop19
       rect:
         serializedVersion: 2
-        x: 35
-        y: 69
+        x: 137
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -554,8 +554,8 @@ TextureImporter:
       name: cop20
       rect:
         serializedVersion: 2
-        x: 69
-        y: 69
+        x: 1
+        y: 1
         width: 32
         height: 32
       alignment: 0
@@ -575,8 +575,8 @@ TextureImporter:
       name: cop21
       rect:
         serializedVersion: 2
-        x: 103
-        y: 69
+        x: 35
+        y: 1
         width: 32
         height: 32
       alignment: 0
@@ -588,237 +588,6 @@ TextureImporter:
       bones: []
       spriteID: 3261cea078c9d70a0800000000000000
       internalID: -6882172551734487517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop22
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 69
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cd779a81936d8c00800000000000000
-      internalID: 904488576917929411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop23
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 69
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8785634c9f053f90800000000000000
-      internalID: -6974651284093302900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop24
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01bfbcd1979167d80800000000000000
-      internalID: -8253381259128210672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop25
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4aed36d750641a5c0800000000000000
-      internalID: -4206003587594854748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop26
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbd63ad56cd3dc070800000000000000
-      internalID: 8128220824657423803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop27
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f50b1ad88528f39c0800000000000000
-      internalID: -3945291431708348321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop28
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55d9dac63a213ebb0800000000000000
-      internalID: -4908058675791422123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop29
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2df394946a08fde00800000000000000
-      internalID: 1071716688019931090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop30
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e0baf347b4f23f90800000000000000
-      internalID: -6975243804886781724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop31
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 1
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab7d3df5a753c1a50800000000000000
-      internalID: 6493123562471413690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cop32
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 1
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83ce8b23c7521b530800000000000000
-      internalID: 3868914770245119032
       vertices: []
       indices: 
       edges: []
