@@ -10,6 +10,8 @@ public class PlayerMoveState : IState
 
     private Coroutine WhistleReset;
 
+    private bool isDead = false;
+
     private Vector2[] detectionPoints = {
         new Vector2(-0.5f, 0.0f),
         new Vector2(0.5f, 0.0f),
@@ -150,10 +152,9 @@ public class PlayerMoveState : IState
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Collided");
-        Debug.Log(player.gameObject.name);
-        if (collider.tag == "EnemyRadar")
+        if (collider.tag == "EnemyRadar" && !isDead)
         {
+            isDead = true;
             GameObject.Destroy(player.gameObject);
             GameObject.Instantiate(PrefabManager.instance.SMOKE, player.transform.position, Quaternion.identity);
 
