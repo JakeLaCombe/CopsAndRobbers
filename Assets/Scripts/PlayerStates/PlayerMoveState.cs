@@ -29,6 +29,16 @@ public class PlayerMoveState : IState
     }
     public void Execute()
     {
+        if (player.input.Pause())
+        {
+            Time.timeScale = Time.timeScale == 1.0f ? 0.0f : 1.0f;
+        }
+
+        if (Time.timeScale == 0.0f)
+        {
+            return;
+        }
+
         float vx = player.rigidBody.velocity.x;
         float vy = player.rigidBody.velocity.y;
 

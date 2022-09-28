@@ -12,7 +12,7 @@ public class KeyboardInput : MonoBehaviour, IInputable
     public KeyCode WHISTLE = KeyCode.X;
     public KeyCode GAS_DROP = KeyCode.C;
     public KeyCode PICKUP = KeyCode.Space;
-    public KeyCode PAUSE = KeyCode.Return;
+    public KeyCode PAUSE = KeyCode.Escape;
     public KeyCode SECONDARY_ACTION = KeyCode.X;
 
     public bool Up()
