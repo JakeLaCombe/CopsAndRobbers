@@ -40,11 +40,6 @@ public class GameManager : MonoBehaviour
         else
         {
             gameStatus = GameStatus.GAME_OVER;
-
-            if (restartGameCoroutine == null)
-            {
-                restartGameCoroutine = StartCoroutine(RestartGame());
-            }
         }
 
     }
@@ -75,11 +70,6 @@ public class GameManager : MonoBehaviour
         if (copCount < 0 || secondsRemaining < 0)
         {
             gameStatus = GameStatus.GAME_OVER;
-
-            if (restartGameCoroutine == null)
-            {
-                restartGameCoroutine = StartCoroutine(RestartGame());
-            }
         }
 
         if (robberCount <= 0)
@@ -98,13 +88,6 @@ public class GameManager : MonoBehaviour
         virtualCamera.Follow = player.transform;
         virtualCamera.LookAt = player.transform;
         virtualCamera.UpdateCameraState(Vector3.up, 10f);
-    }
-
-
-    private IEnumerator RestartGame()
-    {
-        yield return new WaitForSeconds(3.0f);
-        SceneManager.LoadScene(0);
     }
 
     private IEnumerator NextScene()

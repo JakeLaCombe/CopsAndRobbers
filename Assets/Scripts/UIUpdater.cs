@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIUpdater : MonoBehaviour
@@ -11,6 +12,8 @@ public class UIUpdater : MonoBehaviour
     private TextMeshProUGUI GameStatus;
     private TextMeshProUGUI RobberCount;
     private TextMeshProUGUI Timer;
+    private GameObject RestartLevelButton;
+    private GameObject RestartGameButton;
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class UIUpdater : MonoBehaviour
         GameStatus = BaseCanvas.transform.Find("GameStatus").GetComponent<TextMeshProUGUI>();
         RobberCount = BaseCanvas.transform.Find("RobberCount").GetComponent<TextMeshProUGUI>();
         Timer = BaseCanvas.transform.Find("Timer").GetComponent<TextMeshProUGUI>();
+        RestartLevelButton = BaseCanvas.transform.Find("Restart Level").gameObject;
+        RestartGameButton = BaseCanvas.transform.Find("Restart Game").gameObject;
     }
 
     // Update is called once per frame
@@ -39,14 +44,20 @@ public class UIUpdater : MonoBehaviour
         {
             GameStatus.enabled = true;
             GameStatus.text = "Game Over";
+            RestartLevelButton.SetActive(true);
+            RestartGameButton.SetActive(true);
         }
         else if (gameManager.gameStatus == global::GameStatus.TRANSITIONING)
         {
             GameStatus.enabled = true;
             GameStatus.text = "Nice Job!";
+            RestartLevelButton.SetActive(false);
+            RestartGameButton.SetActive(false);
         }
         else
         {
+            RestartLevelButton.SetActive(false);
+            RestartGameButton.SetActive(false);
             GameStatus.enabled = false;
         }
     }
